@@ -47,4 +47,17 @@
         android:layout_width="match_parent"
         android:layout_height="1dp" />
 
+    <TextView
+        android:id="@+id/tab_activity"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:text="@string/tab_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:background="@color/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
 </LinearLayout>

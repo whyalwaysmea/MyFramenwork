@@ -13,6 +13,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView listActivity;
     private TextView stickyHeaderListActivity;
     private TextView sectionListActivity;
+    private TextView tabActivity;
 
 
     @Override
@@ -28,6 +29,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         stickyHeaderListActivity.setOnClickListener(this);
         sectionListActivity = (TextView) findViewById(R.id.section_list_activity);
         sectionListActivity.setOnClickListener(this);
+        tabActivity = (TextView) findViewById(R.id.tab_activity);
+        tabActivity.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +60,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.section_list_activity:
                 startActivity(new Intent(this, SectionListActivity.class));
+                break;
+            case R.id.tab_activity:
+                startActivity(new Intent(this, com.ithaha.myframework.TabActivity.class));
                 break;
         }
     }

@@ -8,4 +8,17 @@
     <string name="list_activity">List Activity</string>
     <string name="sticky_header_list_activity">StickyHeaderList Activity</string>
     <string name="section_list_activity">SectionListActivity</string>
+    <string name="tab_activity">TabActivity</string>
+
+    <string name="home_tab_news">新闻</string>
+    <string name="home_tab_read">阅读</string>
+    <string name="home_tab_audio">试听</string>
+    <string name="home_tab_topic">话题</string>
+    <string name="home_tab_profile">我</string>
+
+    <string name="home_tab_news_title">新闻title</string>
+    <string name="home_tab_read_title">阅读title</string>
+    <string name="home_tab_audio_title">试听title</string>
+    <string name="home_tab_topic_title">话题title</string>
+    <string name="home_tab_profile_title">我title</string>
 </resources>

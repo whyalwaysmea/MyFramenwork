@@ -18,4 +18,5 @@ public class MyApplication extends Application {
         sMyData = new ArrayList<>();
         AppStatusTracker.getInstance(this);
     }
+
 }

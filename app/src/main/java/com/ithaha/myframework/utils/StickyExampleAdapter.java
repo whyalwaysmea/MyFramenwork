@@ -56,6 +56,7 @@ public class StickyExampleAdapter extends RecyclerView.Adapter<RecyclerView.View
         recyclerViewHolder.tvStickyHeader.setText(stickyExampleModel.sticky);
         recyclerViewHolder.itemView.setTag(FIRST_STICKY_VIEW);
       } else {
+        // 当前item的吸顶信息 和 前一个item的吸顶信息进行比较，如果不相同就显示出来
         if (!TextUtils.equals(stickyExampleModel.sticky, stickyExampleModels.get(position - 1).sticky)) {
           recyclerViewHolder.tvStickyHeader.setVisibility(View.VISIBLE);
           recyclerViewHolder.tvStickyHeader.setText(stickyExampleModel.sticky);
@@ -65,6 +66,7 @@ public class StickyExampleAdapter extends RecyclerView.Adapter<RecyclerView.View
           recyclerViewHolder.itemView.setTag(NONE_STICKY_VIEW);
         }
       }
+      // ContentDescription 用来记录并获取要吸顶展示的信息
       recyclerViewHolder.itemView.setContentDescription(stickyExampleModel.sticky);
     }
   }

@@ -10,10 +10,13 @@ public class DataUtil {
     List<StickyExampleModel> stickyExampleModels = new ArrayList<>();
 
     for (int index = 0; index < MODEL_COUNT; index++) {
-      if (index < 5) {
+      if (index < 1) {
         stickyExampleModels.add(new StickyExampleModel(
             "吸顶文本1", "name" + index, "gender" + index, "profession" + index));
-      } else if (index < 15) {
+      } else if (index < 2) {
+        stickyExampleModels.add(new StickyExampleModel(
+                "吸顶文本2", "name" + index, "gender" + index, "profession" + index));
+      }else if (index < 15) {
         stickyExampleModels.add(new StickyExampleModel(
             "吸顶文本2", "name" + index, "gender" + index, "profession" + index));
       } else if (index < 25) {

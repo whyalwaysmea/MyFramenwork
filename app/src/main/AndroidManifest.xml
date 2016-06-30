@@ -22,6 +22,7 @@
         <activity android:name=".ListActivity" />
         <activity android:name=".StickyHeaderListActivity" />
         <activity android:name=".SectionListActivity" />
+        <activity android:name=".TabActivity" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop" />
