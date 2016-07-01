@@ -56,7 +56,6 @@ public class ListFragment extends BaseListFragment<String> implements IFragment{
 
         @Override
         public void bindViewHolder(int position) {
-            System.out.println("hahaha");
             tv.setText(mData.get(position) + "");
         }
     }

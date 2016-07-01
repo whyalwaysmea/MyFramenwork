@@ -17,6 +17,7 @@ public abstract class BaseSectionListActivity extends BaseListActivity<String> {
     public static final int VIEW_TYPE_SECTION_VIEW  = 2;
     public static final int VIEW_TYPE_NORMAL_VIEW = 3;
 
+
     @Override
     protected BaseViewHolder getViewHolder(ViewGroup parent, int viewType) {
         if(VIEW_TYPE_SECTION_VIEW == viewType) {
