@@ -2,10 +2,12 @@ package com.ithaha.myframework.bottom;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -84,10 +86,11 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
         void onTabClick(Tab tab);
     }
 
-    class TabView extends LinearLayout {
+    class TabView extends FrameLayout {
 
         private ImageView mTabImg;
         private TextView mTabLabel;
+        private TextView mTabBadge;
 
         public TabView(Context context) {
             super(context);
@@ -105,17 +108,25 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
         }
 
         private void initView() {
-            LayoutInflater.from(getContext()).inflate(R.layout.widget_tab_view, this, true);
-            setOrientation(VERTICAL);
-            setGravity(Gravity.CENTER);
-            mTabImg = (ImageView) findViewById(R.id.tab_view_img);
-            mTabLabel = (TextView) findViewById(R.id.tab_view_label);
+            LayoutInflater.from(getContext()).inflate(R.layout.bottom_navigation_item, this, true);
+//            setOrientation(VERTICAL);
+//            setGravity(Gravity.CENTER);
+            mTabImg = (ImageView) findViewById(R.id.bottom_navigation_item_icon);
+            mTabLabel = (TextView) findViewById(R.id.bottom_navigation_item_title);
+            mTabBadge = (TextView) findViewById(R.id.bottom_navigation_notification);
         }
 
         public void initData(Tab tab) {
             mTabImg.setBackgroundResource(tab.imgResId);
             mTabLabel.setText(tab.labelResId);
+            if(!TextUtils.isEmpty(tab.getBadge())) {
+                mTabBadge.setVisibility(VISIBLE);
+                mTabBadge.setText(tab.getBadge() + "");
+            } else {
+                mTabBadge.setVisibility(GONE);
+            }
         }
+
     }
 
     public static class Tab {
@@ -123,6 +134,7 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
         private int labelResId;
         private int titleResId;
         private int menuResId;
+        private String badge;
         private Fragment mFragment;
         private Class<? extends IFragment> targetFragmentClz;
 
@@ -174,6 +186,23 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
             mFragment = fragment;
         }
 
+        public Tab(int imgResId, int labelResId, int titleResId, String badge, Class<? extends IFragment> targetFragmentClz) {
+            this.imgResId = imgResId;
+            this.labelResId = labelResId;
+            this.titleResId = titleResId;
+            this.badge = badge;
+            this.targetFragmentClz = targetFragmentClz;
+        }
+
+        public Tab(int imgResId, int labelResId, int titleResId, String badge, Class<? extends IFragment> targetFragmentClz, int menuResId) {
+            this.imgResId = imgResId;
+            this.labelResId = labelResId;
+            this.titleResId = titleResId;
+            this.badge = badge;
+            this.targetFragmentClz = targetFragmentClz;
+            this.menuResId = menuResId;
+        }
+
         public int getImgResId() {
             return imgResId;
         }
@@ -199,6 +228,14 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
 
         public Class<? extends IFragment> getTargetFragmentClz() {
             return targetFragmentClz;
+        }
+
+        public String getBadge() {
+            return badge;
+        }
+
+        public void setBadge(String badge) {
+            this.badge = badge;
         }
     }
 }

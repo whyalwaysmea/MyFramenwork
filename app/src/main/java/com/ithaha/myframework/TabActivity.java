@@ -30,7 +30,7 @@ public class TabActivity extends BaseActivity implements TabLayout.onItemClick {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.activity_tab_layout);
         ArrayList<TabLayout.Tab> tabs = new ArrayList<>();
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_contact, R.string.home_tab_audio, R.string.home_tab_audio_title, ListFragment.class));
-        tabs.add(new TabLayout.Tab(R.drawable.selector_tab_moments, R.string.home_tab_news, R.string.home_tab_news_title, SecondListFragment.class));
+        tabs.add(new TabLayout.Tab(R.drawable.selector_tab_moments, R.string.home_tab_news, R.string.home_tab_news_title, "8", SecondListFragment.class));
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_msg, R.string.home_tab_read, R.string.home_tab_read_title, R.menu.menu_home,ListFragment.class));
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_profile, R.string.home_tab_profile, R.string.home_tab_profile_title, R.menu.menu_my,SecondListFragment.class));
         tabLayout.initData(tabs, this);

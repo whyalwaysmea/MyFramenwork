@@ -9,4 +9,6 @@
     <color name="bg_color_2">#ffffffff</color>
     <color name="text_color">#000</color>
     <color name="green">#ff45c01a</color>
+    <color name="colorBottomNavigationInactive">#747474</color>
+    <color name="badge_color">#ff0000</color>
 </resources>
