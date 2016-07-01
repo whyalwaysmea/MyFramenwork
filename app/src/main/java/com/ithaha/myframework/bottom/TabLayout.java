@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ithaha.myframework.R;
+import com.ithaha.myframework.fragment.IFragment;
 
 import java.util.ArrayList;
 
@@ -123,6 +124,7 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
         private int titleResId;
         private int menuResId;
         private Fragment mFragment;
+        private Class<? extends IFragment> targetFragmentClz;
 
         public Tab(int imgResId, int labelResId) {
             this.imgResId = imgResId;
@@ -149,6 +151,21 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
             mFragment = fragment;
         }
 
+        public Tab(int imgResId, int labelResId, int titleResId, Class<? extends IFragment> targetFragmentClz) {
+            this.imgResId = imgResId;
+            this.labelResId = labelResId;
+            this.titleResId = titleResId;
+            this.targetFragmentClz = targetFragmentClz;
+        }
+
+        public Tab(int imgResId, int labelResId, int titleResId, int menuResId, Class<? extends IFragment> targetFragmentClz) {
+            this.imgResId = imgResId;
+            this.labelResId = labelResId;
+            this.titleResId = titleResId;
+            this.menuResId = menuResId;
+            this.targetFragmentClz = targetFragmentClz;
+        }
+
         public Tab(int imgResId, int labelResId, int titleResId, int menuResId, Fragment fragment) {
             this.imgResId = imgResId;
             this.labelResId = labelResId;
@@ -170,11 +187,18 @@ public class TabLayout extends LinearLayout implements View.OnClickListener {
         }
 
         public int getMenuResId() {
+            if(menuResId == 0) {
+                return -1;
+            }
             return menuResId;
         }
 
         public Fragment getFragment() {
             return mFragment;
+        }
+
+        public Class<? extends IFragment> getTargetFragmentClz() {
+            return targetFragmentClz;
         }
     }
 }

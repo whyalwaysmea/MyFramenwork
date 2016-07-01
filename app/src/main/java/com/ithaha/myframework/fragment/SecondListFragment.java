@@ -1,9 +1,12 @@
 package com.ithaha.myframework.fragment;
 
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ithaha.myframework.R;
 import com.ithaha.myframework.view.BaseViewHolder;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
  * Created by Long
  * on 2016/6/30.
  */
-public class SecondListFragment extends BaseListFragment<String> {
+public class SecondListFragment extends BaseListFragment<String> implements IFragment{
 
     @Override
     protected BaseViewHolder getViewHolder(ViewGroup parent, int viewType) {
@@ -29,6 +32,17 @@ public class SecondListFragment extends BaseListFragment<String> {
             mData.add("" + i);
         }
         mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public Fragment getFragment() {
+        return this;
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        Toast.makeText(getContext(), "Second List ", Toast.LENGTH_SHORT).show();
+        return false;
     }
 
     class MyViewHolder extends BaseViewHolder {
