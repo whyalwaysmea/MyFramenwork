@@ -11,4 +11,4 @@
 
 
 ##TODO
--[ ] BottomBehavior need optimization
+-[x] BottomBehavior need optimization
