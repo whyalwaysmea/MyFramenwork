@@ -8,3 +8,7 @@
 3.RecyclerView 上拉加载更多， 分组 ...
 
 4.Bottom Navigation
+
+
+##TODO
+-[ ] BottomBehavior need optimization
