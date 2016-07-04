@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ithaha.myframework">
+<manifest package="com.ithaha.myframework"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
 
     <application
         android:name=".base.MyApplication"
@@ -13,19 +13,21 @@
         android:theme="@style/AppTheme">
         <activity android:name=".WelcomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".StickyHeaderListActivity" />
-        <activity android:name=".SectionListActivity" />
-        <activity android:name=".TabActivity" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".ListActivity"/>
+        <activity android:name=".StickyHeaderListActivity"/>
+        <activity android:name=".SectionListActivity"/>
+        <activity android:name=".TabActivity"/>
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop" />
+            android:launchMode="singleTop"/>
+        <activity android:name=".ViewPagerActivity">
+        </activity>
     </application>
 
 </manifest>

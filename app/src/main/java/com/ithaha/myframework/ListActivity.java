@@ -12,8 +12,6 @@ import com.ithaha.myframework.view.BaseViewHolder;
 
 public class ListActivity extends BaseListActivity<String> {
 
-
-
     @Override
     protected void initView() {
         super.initView();

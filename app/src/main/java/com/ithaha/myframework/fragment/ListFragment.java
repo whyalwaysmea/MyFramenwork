@@ -19,6 +19,12 @@ import java.util.ArrayList;
  */
 public class ListFragment extends BaseListFragment<String> implements IFragment{
 
+    public static ListFragment newInstance() {
+
+        ListFragment fragment = new ListFragment();
+        return fragment;
+    }
+
     @Override
     protected BaseViewHolder getViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_list_item, parent, false);

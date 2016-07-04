@@ -21,4 +21,5 @@
     <string name="home_tab_audio_title">试听title</string>
     <string name="home_tab_topic_title">话题title</string>
     <string name="home_tab_profile_title">我title</string>
+    <string name="viewpager_activity">ViewPager Activity</string>
 </resources>
