@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.ithaha.myframework.R;
 
+import java.util.Random;
+
 /**
  * Created by Long
  * on 2016/7/4.
@@ -17,7 +19,7 @@ public class SimpleFragment extends BaseFragment {
 
     private TextView mTv;
     private int mParameter;
-    private int mPosition;
+    private int mPosition = -1;
 
     public static SimpleFragment newInstance(int position) {
 
@@ -26,6 +28,12 @@ public class SimpleFragment extends BaseFragment {
         SimpleFragment fragment = new SimpleFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        enableLazyLoad();
     }
 
     @Nullable
@@ -43,16 +51,12 @@ public class SimpleFragment extends BaseFragment {
 
     @Override
     protected void initData() {
-//        mParameter = new Random().nextInt(10);
-        mPosition = getArguments().getInt("position");
-//        mTv.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mTv.setText(mPosition + ":param is " + mParameter  );
-//
-//            }
-//        }, 5000);
-        mTv.setText(mPosition + " "  );
+        if(mPosition == -1) {
+            mParameter = new Random().nextInt(10);
+            mPosition = getArguments().getInt("position");
+        }
+        mTv.setText("Page is:" + mPosition + " .. the num is" + mParameter);
+
     }
 
 }

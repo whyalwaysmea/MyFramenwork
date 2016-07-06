@@ -1,5 +1,6 @@
 package com.ithaha.myframework.fragment;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,6 +20,17 @@ import java.util.ArrayList;
  */
 public class SecondListFragment extends BaseListFragment<String> implements IFragment{
 
+    public static SecondListFragment newInstance() {
+        SecondListFragment fragment = new SecondListFragment();
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        enableLazyLoad();
+    }
+
     @Override
     protected BaseViewHolder getViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_list_item, parent, false);
@@ -27,11 +39,13 @@ public class SecondListFragment extends BaseListFragment<String> implements IFra
 
     @Override
     protected void initData() {
-        mData = new ArrayList<>();
-        for (int i = 50; i > 0; i--) {
-            mData.add("" + i);
+        if(mData == null) {
+            mData = new ArrayList<>();
+            for (int i = 50; i > 0; i--) {
+                mData.add("" + i);
+            }
+            mAdapter.notifyDataSetChanged();
         }
-        mAdapter.notifyDataSetChanged();
     }
 
     @Override

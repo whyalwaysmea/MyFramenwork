@@ -31,16 +31,14 @@ public abstract class BaseListFragment<T> extends BaseFragment implements PullTo
         return inflater.inflate(R.layout.fragment_base_list, container, false);
     }
 
+
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void initView(View view) {
         mPullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(R.id.pullToRefreshRecyclerView);
         mPullToRefreshRecyclerView.setLayoutManager(setLayoutManager());
         mPullToRefreshRecyclerView.setOnRefresh(this);
         mAdapter = new MyBaseListAdapter();
         mPullToRefreshRecyclerView.setAdapter(mAdapter);
-
-        initData();
     }
 
     protected abstract void initData();
