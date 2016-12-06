@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ithaha.myframework.R;
-import com.ithaha.myframework.base.BaseListAdapter;
+import com.ithaha.myframework.view.BaseListAdapter;
 import com.ithaha.myframework.view.BaseViewHolder;
 import com.ithaha.myframework.view.ILayoutManager;
 import com.ithaha.myframework.view.MyLinearLayoutManager;
@@ -24,6 +24,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements PullTo
     private PullToRefreshRecyclerView mPullToRefreshRecyclerView;
     protected MyBaseListAdapter mAdapter;
     protected ArrayList<T> mData;
+    protected View mRootLayout;
 
     @Nullable
     @Override
@@ -39,6 +40,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements PullTo
         mPullToRefreshRecyclerView.setOnRefresh(this);
         mAdapter = new MyBaseListAdapter();
         mPullToRefreshRecyclerView.setAdapter(mAdapter);
+        mRootLayout = view.findViewById(R.id.rootlayout);
     }
 
     protected abstract void initData();

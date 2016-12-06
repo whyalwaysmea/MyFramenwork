@@ -5,8 +5,6 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
-import com.ithaha.myframework.base.BaseListAdapter;
-
 /**
  * Created by Long
  * on 2016/6/17.

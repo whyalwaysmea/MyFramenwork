@@ -1,12 +1,12 @@
 package com.ithaha.myframework.fragment;
 
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ithaha.myframework.R;
 import com.ithaha.myframework.view.BaseViewHolder;
@@ -47,7 +47,7 @@ public class ListFragment extends BaseListFragment<String> implements IFragment{
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        Toast.makeText(getContext(), "List Fragment", Toast.LENGTH_SHORT).show();
+        Snackbar.make(mRootLayout, "SnackbarTest", Snackbar.LENGTH_LONG).show();
         return false;
     }
 

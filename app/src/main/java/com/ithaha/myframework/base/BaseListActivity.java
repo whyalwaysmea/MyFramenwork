@@ -3,6 +3,7 @@ package com.ithaha.myframework.base;
 import android.view.ViewGroup;
 
 import com.ithaha.myframework.R;
+import com.ithaha.myframework.view.BaseListAdapter;
 import com.ithaha.myframework.view.BaseViewHolder;
 import com.ithaha.myframework.view.ILayoutManager;
 import com.ithaha.myframework.view.MyLinearLayoutManager;

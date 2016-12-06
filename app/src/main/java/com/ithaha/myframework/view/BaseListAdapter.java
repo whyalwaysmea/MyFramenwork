@@ -1,4 +1,4 @@
-package com.ithaha.myframework.base;
+package com.ithaha.myframework.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ithaha.myframework.R;
-import com.ithaha.myframework.view.BaseViewHolder;
 
 /**
  * Created by Long
@@ -94,5 +93,36 @@ public abstract class BaseListAdapter extends RecyclerView.Adapter<BaseViewHolde
 
     public boolean isLoadMore(int position) {
         return isLoadMore && position == getItemCount() - 1;
+    }
+
+
+    // 针对GridLayoutManager
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        /*RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
+        if(manager instanceof GridLayoutManager) {
+            final GridLayoutManager gridManager = ((GridLayoutManager) manager);
+            gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    return getItemViewType(position) == TYPE_HEADER
+                            ? gridManager.getSpanCount() : 1;
+                }
+            });
+        }*/
+    }
+
+    // 针对StaggeredGridLayoutManager
+    @Override
+    public void onViewAttachedToWindow(BaseViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+        ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
+        if(lp != null
+                && lp instanceof StaggeredGridLayoutManager.LayoutParams
+                && holder.getLayoutPosition() == 0) {
+            StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
+            p.setFullSpan(true);
+        }
     }
 }

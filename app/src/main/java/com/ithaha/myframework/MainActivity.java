@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ithaha.myframework.base.BaseActivity;
+import com.ithaha.myframework.recyc.RecyclerActivity2;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -68,7 +69,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(new Intent(this, com.ithaha.myframework.TabActivity.class));
                 break;
             case R.id.viewpager_activity:
-                startActivity(new Intent(this, ViewPagerActivity.class));
+//                startActivity(new Intent(this, ViewPagerActivity.class));
+                startActivity(new Intent(this, RecyclerActivity2.class));
 
                 break;
         }

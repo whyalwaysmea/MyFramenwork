@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
 import com.ithaha.myframework.R;
-import com.ithaha.myframework.base.BaseListAdapter;
 
 /**
  * Created by Long

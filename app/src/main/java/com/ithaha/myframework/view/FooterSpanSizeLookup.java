@@ -2,8 +2,6 @@ package com.ithaha.myframework.view;
 
 import android.support.v7.widget.GridLayoutManager;
 
-import com.ithaha.myframework.base.BaseListAdapter;
-
 /**
  * Created by Long
  * on 2016/6/20.
