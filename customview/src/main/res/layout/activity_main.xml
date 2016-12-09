@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.whyalwaysmea.customview.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.whyalwaysmea.customview.CollapseView
+                android:id="@+id/collapseview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.whyalwaysmea.customview.CollapseView
+                android:id="@+id/collapseview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <com.whyalwaysmea.customview.CollapseView
+                android:id="@+id/collapseview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

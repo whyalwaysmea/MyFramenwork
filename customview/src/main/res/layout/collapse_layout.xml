@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#ffffff"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:padding="30px">
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:background="@drawable/circle_textview"
+            android:clickable="false"
+            tools:text="1"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            tools:text="this is content"/>
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/btn_an_xxh"
+            android:layout_width="12dp"
+            android:layout_height="12dp"/>
+    </LinearLayout>
+
+    <View
+        android:background="#e1e1e1"
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+    <RelativeLayout
+        android:id="@+id/contentLayout"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></RelativeLayout>
+
+</LinearLayout>
